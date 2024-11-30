@@ -59,19 +59,39 @@ function Checkbox() {
                       const element = document.querySelector(`[naitik-id="${key}"]`) as HTMLElement;
                       if (element) {
 
-                        element.style.border = '3px solid red';
-                        console.log(element.innerText);
+                        element.style.border = '1px solid red';
+                        element.style.background = '#DFD4FF';
+                        element.style.position = 'relative';
+                        element.style.borderRadius = '13px';
+                        element.style.padding = '10px';
+                        element.style.margin = '10px';
+                        // console.log(element.innerText);
                         const boxDiv = document.createElement('div');
-                        boxDiv.style.border = '3px solid blue';
+                        boxDiv.style.display = 'flex';
+                        boxDiv.style.justifyContent = 'center';
+                        boxDiv.style.alignItems = 'center';
+                        boxDiv.style.flex = 'flex';
+                        boxDiv.style.color = 'white';
+                        boxDiv.style.background = '#940CFF';
+                        boxDiv.style.fontSize = '12px';
+                        boxDiv.style.padding = '8px 22px';
+                        boxDiv.style.fontSize = '12px';
+                        boxDiv.style.borderRadius = '20px';
+                        // boxDiv.style.height = '32px';
+                        boxDiv.style.width = 'auto';
+                        boxDiv.style.minWidth = '100px';
+                        boxDiv.style.boxShadow = '0px 4px 10.7px 0px rgba(0, 0, 0, 0.25)';
                         boxDiv.style.position = 'absolute';
-                        boxDiv.style.left = `${element.offsetLeft + element.offsetWidth + 10}px`;
-                        boxDiv.style.top = `${element.offsetTop}px`;
+                        // boxDiv.style.left = `${element.offsetLeft + element.offsetWidth + 10}px`;
+                        // boxDiv.style.top = `${element.offsetTop}px`;
+                        boxDiv.style.right = '10%';
+                        boxDiv.style.top = '-40%';
                         boxDiv.innerText = value;
-                        const textWidth = boxDiv.offsetWidth;
-                        boxDiv.style.width = `${textWidth}px`;
+                        // const textWidth = boxDiv.offsetWidth;
+                        // boxDiv.style.width = `${textWidth}px`;
 
                         if (element.parentNode) {
-                          element.parentNode.appendChild(boxDiv);
+                          element.appendChild(boxDiv);
                         }
                         console.log(element.innerText);
                     } else {
@@ -147,7 +167,7 @@ function Checkbox() {
               var resultMap: { [key: string]: string } = {};
               for (const key in cleanedMap) {
                 if (cleanedMap.hasOwnProperty(key)) {
-                  resultMap[key] = 'Urgency';
+                  resultMap[key] = 'Detected: Urgency';
                 }
               }
             return resultMap;
